@@ -1,0 +1,31 @@
+services:
+  db:
+    container_name: postgres
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: 'youssef.l'
+      POSTGRES_PASSWORD: '9999'
+      POSTGRES_DB: 'ny_taxi'
+    ports:
+      - '5430:5432'
+    volumes:
+      - .data/vol-pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "laouinayoussef1999@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "9900"
+    ports:
+      - "8081:80"
+    volumes:
+      - .data/vol-pgadmin_data:/var/lib/pgadmin  
+
+volumes:
+  vol-pgdata:
+    name: vol-pgdata
+    driver: local
+  vol-pgadmin_data:
+    name: vol-pgadmin_data
+    driver: local
