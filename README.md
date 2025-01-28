@@ -18,11 +18,10 @@ python ingest_data.py --user youssef.l --password 9999 --host postgresDB --port 
 ```
 
 # Connect to Postgres Database to see the data
-```python
-- Using docker: docker exec -it pgdb psql -U youssef.l -d ny_taxi
+
+- Using docker: ``` docker exec -it pgdb psql -U youssef.l -d ny_taxi ```
 - Using pgAdmin: http://localhost:8080 (login and set up server)
-- Using pgcli: pgcli -h localhost -p (host port) -U (user) -d (db name)
-```
+- Using pgcli: ``` pgcli -h localhost -p (host port) -U (user) -d (db name) ```
 
 # Create PgAdmin
 ```python
